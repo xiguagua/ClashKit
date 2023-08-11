@@ -60,7 +60,9 @@ func Run(withConfig string) {
 		C.SetHomeDir(homeDir)
 	}
 
-	configFile = withConfig
+	if withConfig != "" {
+		configFile = withConfig
+	}
 
 	if configFile != "" {
 		if !filepath.IsAbs(configFile) {
