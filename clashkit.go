@@ -60,6 +60,8 @@ func Run(withConfig string) {
 		C.SetHomeDir(homeDir)
 	}
 
+	configFile = withConfig
+
 	if configFile != "" {
 		if !filepath.IsAbs(configFile) {
 			currentDir, _ := os.Getwd()
