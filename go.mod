@@ -4,7 +4,6 @@ go 1.20
 
 require (
 	github.com/Dreamacro/clash v1.17.0
-	go.uber.org/automaxprocs v1.5.2
 )
 
 require (
