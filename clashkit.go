@@ -13,7 +13,6 @@ import (
 
 var (
 	flagset            map[string]bool
-	testConfig         bool
 	homeDir            string
 	configFile         string
 	externalUI         string
@@ -22,10 +21,6 @@ var (
 )
 
 func init() {
-	// flag.StringVar(&externalUI, "ext-ui", "", "override external ui directory")
-	// flag.StringVar(&externalController, "ext-ctl", "", "override external controller address")
-	// flag.StringVar(&secret, "secret", "", "override secret for RESTful API")
-
 	flagset = map[string]bool{}
 }
 
@@ -38,14 +33,6 @@ func Run(withConfig string) {
 		configFile = withConfig
 	}
 
-	// if homeDir != "" {
-	// 	if !filepath.IsAbs(homeDir) {
-	// 		currentDir, _ := os.Getwd()
-	// 		homeDir = filepath.Join(currentDir, homeDir)
-	// 	}
-	// 	C.SetHomeDir(homeDir)
-	// }
-
 	if configFile == "" {
 		log.Fatalln("Initial configuration directory error: configFile is empty")
 	}
@@ -53,25 +40,11 @@ func Run(withConfig string) {
 	homeDir = filepath.Dir(configFile)
 	C.SetHomeDir(homeDir)
 
-	// if !filepath.IsAbs(configFile) {
-	// 	currentDir, _ := os.Getwd()
-	// 	configFile = filepath.Join(currentDir, configFile)
-	// }
 	C.SetConfig(configFile)
 
 	if err := config.Init(C.Path.HomeDir()); err != nil {
 		log.Fatalln("Initial configuration directory error: %s", err.Error())
 	}
-
-	// if testConfig {
-	// 	if _, err := executor.Parse(); err != nil {
-	// 		log.Errorln(err.Error())
-	// 		fmt.Printf("configuration file %s test failed\n", C.Path.Config())
-	// 		os.Exit(1)
-	// 	}
-	// 	fmt.Printf("configuration file %s test is successful\n", C.Path.Config())
-	// 	return
-	// }
 
 	var options []hub.Option
 	if flagset["ext-ui"] {
