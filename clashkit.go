@@ -27,7 +27,7 @@ func init() {
 func Run(withConfig string) {
 	// maxprocs.Set(maxprocs.Logger(func(string, ...any) {}))
 	debug.SetMemoryLimit(20 * 1 << 20) // 20 MB
-	debug.SetMaxThreads(30)            // default 10,000
+	debug.SetMaxThreads(100)           // default 10,000
 
 	if withConfig != "" {
 		configFile = withConfig
