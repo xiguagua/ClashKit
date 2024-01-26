@@ -5,10 +5,10 @@ import (
 	"path/filepath"
 	"runtime/debug"
 
-	"github.com/Dreamacro/clash/config"
-	C "github.com/Dreamacro/clash/constant"
-	"github.com/Dreamacro/clash/hub"
-	"github.com/Dreamacro/clash/log"
+	"github.com/xiguagua/clash/config"
+	C "github.com/xiguagua/clash/constant"
+	"github.com/xiguagua/clash/hub"
+	"github.com/xiguagua/clash/log"
 )
 
 var (
