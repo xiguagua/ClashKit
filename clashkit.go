@@ -62,7 +62,6 @@ func Run(withConfig string) {
 	}
 
 	fmt.Print("Hello, ClashKit")
-	return
 
 	// sigCh := make(chan os.Signal, 1)
 	// signal.Notify(sigCh, syscall.SIGINT, syscall.SIGTERM)
