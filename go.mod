@@ -4,7 +4,9 @@ go 1.21
 
 toolchain go1.21.5
 
-require github.com/xiguagua/clash v0.6.1
+require github.com/xiguagua/clash v0.0.0
+
+replace github.com/xiguagua/clash => /Users/huangcheng/Developer/clash
 
 require (
 	github.com/Dreamacro/protobytes v0.0.0-20230617041236-6500a9f4f158 // indirect
