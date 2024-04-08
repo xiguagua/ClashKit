@@ -28,7 +28,7 @@ func Run(withConfig string) {
 	// The input limit is provided as bytes, and includes all memory mapped, managed,
 	// and not released by the Go runtime.
 	// Notably, it does not account for space used by the Go binary and memory external to Go
-	debug.SetMemoryLimit(15 * 1 << 20) // 15 MB
+	debug.SetMemoryLimit(20 * 1 << 20) // 20 MB
 	// debug.SetMaxThreads(100)           // default 10,000
 
 	if withConfig != "" {
